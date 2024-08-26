@@ -8,4 +8,4 @@ d=sqr((x2-x1)^2 + (y2-y1)^2)
 
 ## general case
 use the euclidean distance:
-![general euclidean distance](general-euclidean.png)
+![general euclidean distance](./readMeImages/general-euclidean.png)
