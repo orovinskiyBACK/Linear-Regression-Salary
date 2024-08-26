@@ -1,0 +1,6 @@
+name: llm
+channels:
+  - microsoft
+  - conda-forge
+  - defaults
+prefix: /opt/anaconda3/envs/llm
