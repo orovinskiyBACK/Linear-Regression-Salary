@@ -9,3 +9,6 @@ d=sqr((x2-x1)^2 + (y2-y1)^2)
 ## general case
 use the euclidean distance:
 ![general euclidean distance](./readMeImages/general-euclidean.png)
+
+## Useful Notes
+- Get most common label based on neighbors.
