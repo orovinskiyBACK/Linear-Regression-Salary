@@ -12,3 +12,4 @@ use the euclidean distance:
 
 ## Useful Notes
 - Get most common label based on neighbors.
+- Set odd amount of neigbors for best results( impossible for a split)
