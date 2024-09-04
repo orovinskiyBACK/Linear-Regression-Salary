@@ -1,26 +1,28 @@
-# Naive Bayes
-Practice for Naive Bayes, Based on bayes theorem
+# Perceptron
+Practice for perceptron, One single unit in a neural network, Simple model of a bio neuron (sims behavior of a single cell). Simple application works on only linear solutions
 
-## Bayes Theorem
-![bayes theorem](./readeMeImages/bayesTheorem.png)
-- if we have two events A and B then the probability
-of Event A and that B has happened is equal to the equation above
-- P = probability | A,B = Events
+## Example of cells working
+![cell example of working](./readeMeImages/cellExample.png)
+- inputs are multiplied by weights and sumed up.
 
-### For our example 
-![our example of bayes theorim](./readeMeImages/ourCase.png)
-- using feature vector X = (x1,x2,x3,.....xn)
-- A feature is for example the sun is shining, the person is healthy
-- make assumption all features are mutually independent
-![independent faetures](./readeMeImages/featuresIndependent.png)
-- Get probability for each feature
+## Linear Model
+![linear model func](./readeMeImages/linearModel.png)
 
-## Select class with the highest probability
-![highest prob example of getting correct equation](./readeMeImages/highestProb.png)
+## Activation Function (For most simple case)
+![unit step function](./readeMeImages/unitStepFunc.png)
+![unit step graph](./readeMeImages/unitStepGraph.png)
+- if input is larger than 0 then output is 1 otherwise output == 0
 
-## Prioe Probability P(y) : frequency
+## Approximation
+![approcimation](./readeMeImages/aproximation.png)
+- first apply linear model then the activation.
+- second get the weights and bias
 
-## class conditional probability P(x_i|y)
-![class conditional probability](./readeMeImages/classConditional.png)
-![class conditional graph](./readeMeImages/classConditionalGraph.png)
-u=means, o = variance
+## Perceptron update rule
+![perceptron update rules](./readeMeImages/perceptronUpdateRule.png)
+- new weight defined as old weight + the delta weight
+- delta weight defined as alpha * (actual label - predicted label) * training sample
+- alpha is learning rate between [0 and 1] (scaling factor)
+
+### Update rule explained for a 2 class problem
+![update rule explained](./readeMeImages/updateRuleExp.png)
