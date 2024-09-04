@@ -1,28 +1,25 @@
-# Logistic-Regression
-Practice for Logistic Regression
-- Dont want continuous values but a probability
+# Naive Bayes
+Practice for Naive Bayes, Based on bayes theorem
 
-## Approximation
-![approximation](./readeMeImages/Approximation.png)
+## Bayes Theorem
+![bayes theorem](./readeMeImages/bayesTheorem.png)
+- if we have two events A and B then the probability
+of Event A and that B has happened is equal to the equation above
+- P = probability | A,B = Events
 
-## Sigmoid Function
-![sigmoid function](./readeMeImages/SigmoidFunc.png)
+### For our example 
+![our example of bayes theorim](./readeMeImages/ourCase.png)
+- using feature vector X = (x1,x2,x3,.....xn)
+- A feature is for example the sun is shining, the person is healthy
+- make assumption all features are mutually independent
+![independent faetures](./readeMeImages/featuresIndependent.png)
+- Get probability for each feature
 
-## Cost Function
-![cost function](./readeMeImages/costFunc.png)
+## Select class with the highest probability
+![highest prob example of getting correct equation](./readeMeImages/highestProb.png)
 
-## Gradient Decent
-![gradient decent](./readeMeImages/gradientDecent.png)
-- Calculate derivative and go that direction until min is met
+## Prioe Probability P(y) : frequency
 
-## Learning Rate 
-- Determines how far you go in the direction each step
-- Shouldnt be to high or to low
-![learning rate](./readeMeImages/learningRate.png)
-
-## Update Rules
-![update rules](./readeMeImages/updateRules.png)
-- new weight = old weight - learning rate * derivative
-- b = bias
-
-
+## class conditional probability P(x_i|y)
+![class conditional probability](./readeMeImages/classConditional.png)
+![class conditional graph](./readeMeImages/classConditionalGraph.png)
