@@ -1,28 +1,24 @@
-# Perceptron
-Practice for perceptron, One single unit in a neural network, Simple model of a bio neuron (sims behavior of a single cell). Simple application works on only linear solutions
-
-## Example of cells working
-![cell example of working](./readeMeImages/cellExample.png)
-- inputs are multiplied by weights and sumed up.
+# SVM !Important
+Practice for SVM model (Support Vector Machine).
+- Follows linear model to find a linear decesion tree also called Hyper Plane. 
+- Chooses the largest margin or seperation between two classes
+![svm graph example](./readeMeImages/svmExample.png)
 
 ## Linear Model
-![linear model func](./readeMeImages/linearModel.png)
+![linear model](./readeMeImages/linearModel.png)
 
-## Activation Function (For most simple case)
-![unit step function](./readeMeImages/unitStepFunc.png)
-![unit step graph](./readeMeImages/unitStepGraph.png)
-- if input is larger than 0 then output is 1 otherwise output == 0
+## Cost Function
+### Hinge Loss
+![Hing loss](./readeMeImages/costFunc.png)
+![Hing loss graph](./readeMeImages/hingLossGraph.png)
 
-## Approximation
-![approcimation](./readeMeImages/aproximation.png)
-- first apply linear model then the activation.
-- second get the weights and bias
+## Adding Regularization
+![unit step function](./readeMeImages/regularization.png)
+- To minimize loss get gradient
 
-## Perceptron update rule
-![perceptron update rules](./readeMeImages/perceptronUpdateRule.png)
-- new weight defined as old weight + the delta weight
-- delta weight defined as alpha * (actual label - predicted label) * training sample
-- alpha is learning rate between [0 and 1] (scaling factor)
+## Gradients
+![gradients](./readeMeImages/gradients.png)
 
-### Update rule explained for a 2 class problem
-![update rule explained](./readeMeImages/updateRuleExp.png)
+## Update rule
+![perceptron update rules](./readeMeImages/updateRule.png)
+
