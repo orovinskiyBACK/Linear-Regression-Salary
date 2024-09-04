@@ -23,3 +23,4 @@ of Event A and that B has happened is equal to the equation above
 ## class conditional probability P(x_i|y)
 ![class conditional probability](./readeMeImages/classConditional.png)
 ![class conditional graph](./readeMeImages/classConditionalGraph.png)
+u=means, o = variance

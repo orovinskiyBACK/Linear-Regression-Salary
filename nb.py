@@ -1,21 +1,43 @@
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn import datasets
-import matplotlib.pyplot as plt
 
-from logistic_regression import LogisticRegression
+class NaiveBayes:
 
-bc = datasets.load_breast_cancer()
-X, y = bc.data, bc.target
+    def fit(self, X, y):
+        n_samples, n_features = X.shape
+        self._classes = np.unique(y)
+        n_classes = len(self._classes)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1234)
+        # init mean, var, priors
+        self._mean = np.zeros((n_classes, n_features), dtype=np.float64)
+        self._var = np.zeros((n_classes, n_features), dtype=np.float64)
+        self._priors = np.zeros(n_classes, np.float64)
 
-def accuracy(y_true, y_pred):
-    accuracy = np.sum(y_true == y_pred) / len(y_true)
-    return accuracy
+        for c in self._classes:
+            X_c = X[c==y]
+            self._mean[c,:]= X_c.mean(axis=0)
+            self._var[c,:]= X_c.var(axis=0)
+            self._priors[c] = X_c.shape[0] / float(n_samples) # frequency of class c
+        
 
-regressor = LogisticRegression(lr=.0001, n_iters=1000)
-regressor.fit(X_train, y_train)
-predictions = regressor.predict(X_test)
+    def predict(self, X):
+        y_pred = [self._predict(x) for x in X]
+        return y_pred
 
-print("LR classifications accuracy:", accuracy(y_test, predictions))
+    def _predict(self, x):
+        posteriors = []
+
+        # get class label and index
+        for idx, c in enumerate(self._classes):
+            prior = np.log(self._priors[idx])
+            class_conditional = np.sum(np.log(self._probability_density_func(idx, x)))
+            posterior = prior + class_conditional
+            posteriors.append(posterior)
+
+        return self._classes[np.argmax(posteriors)]
+
+    def _probability_density_func(self, class_idx, x):
+        mean = self._mean[class_idx]
+        var = self._var[class_idx]
+        numerator = np.exp(- (x-mean)**2 / (2*var))
+        denominator = np.sqrt(2* np.pi * var)
+        return numerator/denominator
